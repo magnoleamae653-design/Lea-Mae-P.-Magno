@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lea Mae P. Magno - Student Personal Portfolio">
+  <title>Lea Mae P. Magno | Student Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f4f8ff;
+      --card: #ffffff;
+      --text: #17233d;
+      --muted: #58677e;
+      --accent: #4f46e5;
+      --border: #dbe3f0;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: var(--accent);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .links a:hover { color: var(--accent); }
+
+    button, .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-block;
+      font: inherit;
+    }
+
+    button:hover, .btn:hover { opacity: .85; }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 30px;
+      margin-bottom: 25px;
+    }
+
+    .hero {
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.2;
+    }
+
+    .hero h1 span { color: var(--accent); }
+
+    .hero p { color: var(--muted); }
+
+    .profile {
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px #0000000b;
+    }
+
+    .card h3 { margin-top: 0; }
+    .card p { color: var(--muted); }
+
+    .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 7px 13px;
+      margin: 5px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .resume {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: var(--card);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 650px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .profile { width: 180px; height: 180px; }
+
+      nav { justify-content: center; }
+      .links { justify-content: center; }
+    }
+
+    @media print {
+      header, .hero, #projects, #contact, footer,
+      .print-hide { display: none !important; }
+
+      body { background: white; color: black; }
+      section { padding: 10px 0; }
+      .card, .resume { box-shadow: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">Lea Mae.</a>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <button id="themeBtn" type="button">Dark Mode</button>
+  </nav>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div>
+      <h1>Hello, I'm <span>Lea Mae P. Magno</span></h1>
+      <h3>BS Computer Science Student</h3>
+      <p>
+        Catanduanes State University<br>
+        Catanduanes, Philippines
+      </p>
+      <p>
+        Passionate about programming, web development,
+        technology, and continuous learning.
+      </p>
+      <a class="btn" href="#projects">View My Projects</a>
+      <a class="btn" href="#resume">View Resume</a>
+    </div>
+
+    <img
+      class="profile"
+      src="IMG20260503141455.jpg"
+      alt="Student profile photo">
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+
+    <div class="card">
+      <p>
+        Hello! I am Lea Mae P. Magno, a Bachelor of Science
+        in Computer Science student at Catanduanes State
+        University.
+      </p>
+
+      <p>
+        I am interested in programming, website development,
+        software development, and solving problems using
+        technology.
+      </p>
+
+      <p>
+        My goal is to improve my technical knowledge,
+        develop practical programming skills, and become
+        a professional software developer in the future.
+      </p>
+    </div>
+
+    <h2>Personal Information</h2>
+
+    <div class="card">
+      <p><strong>Name:</strong> Lea Mae P. Magno</p>
+      <p><strong>Course:</strong> BS Computer Science</p>
+      <p><strong>School:</strong> Catanduanes State University</p>
+      <p><strong>Location:</strong> Catanduanes, Philippines</p>
+      <p><strong>Interests:</strong> Coding, Web Development, Technology</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Educational Background</h2>
+
+    <div class="card">
+      <h3>College</h3>
+      <p>Bachelor of Science in Computer Science</p>
+      <p>Catanduanes State University</p>
+      <p>Graduation Year: To be updated</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Skills</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Programming Languages</h3>
+        <span class="tag">C++</span>
+        <span class="tag">Java</span>
+        <span class="tag">JavaScript</span>
+      </div>
+
+      <div class="card">
+        <h3>Web Development</h3>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">Responsive Design</span>
+      </div>
+
+      <div class="card">
+        <h3>Development Tools</h3>
+        <span class="tag">VS Code</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+      </div>
+
+      <div class="card">
+        <h3>Soft Skills</h3>
+        <span class="tag">Teamwork</span>
+        <span class="tag">Communication</span>
+        <span class="tag">Problem Solving</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <p>Sample project entries — replace with your completed work.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Personal Portfolio Website</h3>
+        <p>
+          A responsive personal portfolio created using
+          HTML, CSS, and JavaScript.
+        </p>
+        <a class="btn"
+           href="https://github.com/magnoleamae653-design/Lea-Mae-Magno"
+           target="_blank" rel="noopener noreferrer">
+          View GitHub
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Student Management System</h3>
+        <p>
+          Example academic project using object-oriented
+          programming to manage student records.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Data Structures Activities</h3>
+        <p>
+          Example programming activities involving
+          arrays, stacks, queues, and linked lists.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Achievements & Certifications</h2>
+
+    <div class="card">
+      <p>
+        Add your academic awards, completed training,
+        seminars, certificates, and accomplishments here.
+      </p>
+      <p>Achievement 1: To be updated</p>
+      <p>Certificate 1: To be updated</p>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>My Resume</h2>
+
+    <div class="resume">
+      <h2>Lea Mae P. Magno</h2>
+      <p>BS Computer Science Student</p>
+      <p>Catanduanes State University</p>
+
+      <h3>Career Objective</h3>
+      <p>
+        To develop my skills in programming and software
+        development while gaining practical experience
+        through academic and personal projects.
+      </p>
+
+      <h3>Education</h3>
+      <p>BS Computer Science — Catanduanes State University</p>
+
+      <h3>Technical Skills</h3>
+      <p>HTML, CSS, JavaScript, C++, Java, Git, GitHub</p>
+
+      <h3>Projects</h3>
+      <p>Personal Portfolio Website</p>
+      <p>Other projects: To be updated</p>
+
+      <h3>Achievements</h3>
+      <p>To be updated</p>
+
+      <button class="print-hide" onclick="window.print()">
+        Print / Save as PDF
+      </button>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+
+    <div class="card">
+      <p>
+        Interested in learning more about my projects?
+        Visit my GitHub profile.
+      </p>
+
+      <p>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/magnoleamae653-design"
+           target="_blank" rel="noopener noreferrer">
+          magnoleamae653-design
+        </a>
+      </p>
+
+      <p><strong>Email:</strong> Add your professional email here</p>
+      <p><strong>Location:</strong> Catanduanes, Philippines</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Lea Mae P. Magno.</p>
+  <p>Student Personal Portfolio | All Rights Reserved</p>
+</footer>
+
+<script>
+  const themeBtn = document.getElementById("themeBtn");
+
+  function updateThemeButton() {
+    themeBtn.textContent = document.body.classList.contains("dark")
+      ? "Light Mode"
+      : "Dark Mode";
+  }
+
+  if (localStorage.getItem("portfolioTheme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  updateThemeButton();
+
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    const theme = document.body.classList.contains("dark")
+      ? "dark"
+      : "light";
+
+    localStorage.setItem("portfolioTheme", theme);
+    updateThemeButton();
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
